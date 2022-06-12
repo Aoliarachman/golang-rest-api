@@ -1,0 +1,14 @@
+package service
+
+import (
+	"context"
+	"golang-rest-api/model/web"
+)
+
+type ProductService interface {
+	Create(ctx context.Context, request web.ProductCreateRequest) web.ProductResponse
+	Update(ctx context.Context, request web.ProductUpdateRequest) web.ProductResponse
+	Delete(ctx context.Context, productId int)
+	FindById(ctx context.Context, productId int) web.ProductResponse
+	FindByAll(ctx context.Context) []web.ProductResponse
+}
